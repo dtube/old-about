@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+<div id="app">
+    <nav id="nav" :class="'navbar navbar-expand-lg navbar-light bg-light fixed-top' + (scrolled ? ' scrolled' : '')" v-cloak>
+        <button class="navbar-toggler border-0 mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li v-if="scrolled">
+                    <img src="assets/img/logo.png" class="d-block logo align-middle"/>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">What is DTube?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contributing</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <img src="assets/img/logo.png" class="mx-auto mw-100 d-block"/>
+
+        <h1 class="text-center pt-5 mt-5 mb-5">What is <a class="text-dark" href="https://dtube.video">DTube?</a></h1>
+        <p class="text-dark lead">
+            DTube is a video platform, that rewards it's users for creating and curating videos.
+            DTube runs on a decentralized public blockchain, which means it is run by a free and open community around it, without any central authority involved.
+            Therefore censorship on DTube is close to impossible. It is free to use for anyone and it even pays you for doing so.<br>
+            <br>
+            The asset of modern day's society is your attention and advertisers pay huge amounts of money to get it.
+            In the "old model" user generated content is used to gain attention and then selling a part of it to advertisers.
+            Unfortunately the price the advertiser pays for just a little bit of your attention is much more than what the creator who's content attracted your attention in the first place, is actually rewarded with.
+            That's because a middle man is needed in order to connect advertisers, creators and consumers.<br>
+            <br>
+            DTube on the other hand doesn't need a middle man and is free of payed advertisements.
+            And yet it transforms the value users generate by creating quality content and contributing to the community, into a practical and tradable asset and currency that has real world value.
+        </p>
+    </div>
+    <hr class="mt-5">
+    <div class="container">
+        <h1 class="text-center pt-5 mt-5 mb-5">FAQ</h1>
+        <div id="faq" v-cloak>
+            <div v-for="(question, key) in faq">
+                <div :id="'heading' + key">
+                    <h5>
+                        <a class="text-center d-block" data-toggle="collapse" :href="'#collapse' + key">
+                            {{ question.question }}
+                        </a>
+                    </h5>
+                </div>
+
+                <div :id="'collapse' + key" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        {{ question.answer }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="mt-5">
+    <div class="container">
+        <h1 class="text-center pt-5 mt-5 mb-5">Contributing</h1>
+        <div id="contribute">
+            <div class="text-center">
+                <span class="text-muted">Coming soon!</span><br>
+                Once DTube reaches v1.0 it will become an open source project that everyone is invited to contribute to.
+                <br>
+                <a href="#" class="contributing-github-logo">
+                    <i class="fa fa-github fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="#" class="mt-2 mb-2 d-block text-muted">steemit.com</a>
+                    <a href="#" class="mt-2 mb-2 d-block text-muted">steem.io</a>
+                    <a href="#" class="mt-2 mb-2 d-block text-muted">...</a>
+                    <a href="#" class="mt-2 mb-2 d-block text-muted">...</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="mt-2 mb-2 d-block text-muted">steemit.chat</a>
+                    <a href="#" class="mt-2 mb-2 d-block text-muted">discord</a>
+                    <a href="#" class="mt-2 mb-2 d-block text-muted">...</a>
+                    <a href="#" class="mt-2 mb-2 d-block text-muted">...</a>
+                </div>
+                <div class="col">
+                    <h5 class="text-center">STEEM Price:</h5>
+                    <div id="steemit-widgets-ticker"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center pt-5 pb-4 mt-5">
+                    <small class="text-muted">DTube was developed by <a href="https://steemit.com/@heimindanger" class="text-muted">@heimindanger</a>.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<template id="steemit-widgets-ticker-template">
+    <div style="border: 0 solid rgb(0, 168, 230); border-radius: 0; font-family: Arial, Helvetica, sans-serif;">
+        <div style="color: rgb(120, 120, 120); background: rgb(255, 255, 255);">
+            <div style="display: table; table-layout: fixed; width: 100%; text-align: center; font-size: 18px; line-height: 21px; padding: 10px 0 5px;">
+                <div style="display: table-cell;"><b>${PRICE_USD} USD</b><br><small>${PRICE_BTC} BTC</small></div>
+                <div style="display: table-cell;"><b>${PERCENT_CHANGE_24H} <small>24h</small></b><br><small>${PERCENT_CHANGE_1H} 1h | ${PERCENT_CHANGE_7D} 7d</small></div>
+            </div>
+            <div style="display: table; table-layout: fixed; width: 100%; text-align: center; font-size: 12px; padding: 5px 0;">
+                <div style="display: table-cell;">
+                    Market Cap: $ ${MARKET_CAP_USD}<br>
+                    <a href="https://coinmarketcap.com" class="text-muted">coinmarketcap.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!--<script src="assets/vendor/jquery/dist/jquery.slim.min.js"></script>-->
+<!--<script src="assets/vendor/popper.js/dist/popper.min.js"></script>-->
+<!--<script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="assets/vendor/vue/dist/vue.min.js"></script>
+<script src="assets/js/index.js"></script>
+
+<script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+<script src="https://mktcode.github.io/steemit-widgets/assets/js/steemit-widgets.min.js"></script>
+<script>
+    steemitWidgets.ticker({
+        element: 'steemit-widgets-ticker',
+        template: 'steemit-widgets-ticker-template',
+        currency: 'steem',
+        priceBTCPrecision: 8,
+        priceUSDPrecision: 2,
+        updateInterval: 60
+    });
+</script>
+</body>
+</html>

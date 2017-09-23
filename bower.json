@@ -1,0 +1,11 @@
+{
+  "name": "about.dtube.video",
+  "authors": [
+    "mktcode <kontakt@markus-kottlaender.de>"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-beta",
+    "font-awesome": "fontawesome#^4.7.0",
+    "vue": "^2.4.4"
+  }
+}

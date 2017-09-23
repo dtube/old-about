@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Noto Sans:400,700,400italic,700italic&subset=latin");
+body {
+  font-family: "Noto Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  padding-top: 56px; }
+
+[v-cloak] {
+  display: none; }
+
+#footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background: #f8f8f8;
+  margin-top: 50px;
+  padding-top: 50px; }
+
+a {
+  color: #ff1c1b;
+  transition: color 0.3s ease; }
+  a:hover {
+    text-decoration: none;
+    color: #e11c1b; }
+
+#nav {
+  opacity: 0.5;
+  transition: opacity 0.3s; }
+  #nav:hover, #nav.scrolled {
+    opacity: 1; }
+  #nav.scrolled {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+    #nav.scrolled .logo {
+      opacity: 1; }
+  #nav .logo {
+    opacity: 0;
+    width: 75px;
+    margin-top: 9px;
+    margin-right: 15px;
+    transition: opacity 0.3s; }
+
+.contributing-github-logo {
+  color: #bbb;
+  font-size: 200%;
+  margin-top: 25px;
+  display: block; }
+
+#footer a.text-muted:hover {
+  color: #e11c1b !important; }
+
+@media (max-width: 991px) {
+  #nav .navbar-nav .nav-item:first-child {
+    margin-top: 25px; }
+  #nav .navbar-nav .nav-item .nav-link {
+    text-align: center; }
+
+  .lead {
+    font-size: 1rem; } }
+
+/*# sourceMappingURL=index.css.map */
