@@ -26,9 +26,22 @@ a {
     opacity: 1; }
   #nav.scrolled {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
-    #nav.scrolled .logo {
+    #nav.scrolled .navbar-toggler .logo {
+      display: inline-block;
+      opacity: 1;
+      width: 75px;
+      margin-left: 15px;
+      transition: opacity 0.3s; }
+    #nav.scrolled .navbar-nav .logo {
+      display: block;
       opacity: 1; }
-  #nav .logo {
+  #nav .navbar-toggler .logo {
+    display: none;
+    opacity: 0;
+    width: 75px;
+    transition: opacity 0.3s; }
+  #nav .navbar-nav .logo {
+    display: none;
     opacity: 0;
     width: 75px;
     margin-top: 9px;
@@ -45,10 +58,10 @@ a {
   color: #e11c1b !important; }
 
 @media (max-width: 991px) {
-  #nav .navbar-nav .nav-item:first-child {
+  #nav .navbar-nav {
     margin-top: 25px; }
-  #nav .navbar-nav .nav-item .nav-link {
-    text-align: center; }
+    #nav .navbar-nav .nav-item .nav-link {
+      text-align: center; }
 
   .lead {
     font-size: 1rem; } }

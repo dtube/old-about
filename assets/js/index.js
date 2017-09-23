@@ -31,3 +31,7 @@ var app = new Vue({
         })
     }
 });
+
+$(function () {
+    $(window).scroll();
+});

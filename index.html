@@ -14,12 +14,13 @@
     <nav id="nav" :class="'navbar navbar-expand-lg navbar-light bg-light fixed-top' + (scrolled ? ' scrolled' : '')" v-cloak>
         <button class="navbar-toggler border-0 mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
+            <img src="assets/img/logo.png" class="logo"/>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
-                <li v-if="scrolled">
-                    <img src="assets/img/logo.png" class="d-block logo align-middle"/>
+                <li v-if="scrolled" class="d-none d-lg-block">
+                    <img src="assets/img/logo.png" class="logo"/>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">What is DTube?</a>
@@ -102,7 +103,8 @@
                     <a href="#" class="mt-2 mb-2 d-block text-muted">...</a>
                     <a href="#" class="mt-2 mb-2 d-block text-muted">...</a>
                 </div>
-                <div class="col">
+                <div class="w-100 d-md-none d-lg-none d-xl-none"></div>
+                <div class="col mt-5 mt-md-0">
                     <h5 class="text-center">STEEM Price:</h5>
                     <div id="steemit-widgets-ticker"></div>
                 </div>

@@ -28,14 +28,32 @@ a
     opacity: 1
   &.scrolled
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
+    .navbar-toggler
+      .logo
+        display: inline-block
+        opacity: 1
+        width: 75px
+        margin-left: 15px
+        transition: opacity .3s
+    .navbar-nav
+      .logo
+        display: block
+        opacity: 1
+
+  .navbar-toggler
     .logo
-      opacity: 1
-  .logo
-    opacity: 0
-    width: 75px
-    margin-top: 9px
-    margin-right: 15px
-    transition: opacity .3s
+      display: none
+      opacity: 0
+      width: 75px
+      transition: opacity .3s
+  .navbar-nav
+    .logo
+      display: none
+      opacity: 0
+      width: 75px
+      margin-top: 9px
+      margin-right: 15px
+      transition: opacity .3s
 
 .contributing-github-logo
   color: #bbb
@@ -51,9 +69,8 @@ a
 @media (max-width: 991px)
   #nav
     .navbar-nav
+      margin-top: 25px
       .nav-item
-        &:first-child
-          margin-top: 25px
         .nav-link
           text-align: center
 
