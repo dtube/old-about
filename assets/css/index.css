@@ -6,12 +6,6 @@ body {
 [v-cloak] {
   display: none; }
 
-#footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  background: #f8f8f8;
-  margin-top: 50px;
-  padding-top: 50px; }
-
 a {
   color: #ff1c1b;
   transition: color 0.3s ease; }
@@ -54,14 +48,44 @@ a {
   margin-top: 25px;
   display: block; }
 
-#footer a.text-muted:hover {
-  color: #e11c1b !important; }
+#header {
+  padding: 120px 50px;
+  background: url("../img/header-bg.png") center center;
+  background-size: cover;
+  border-bottom: solid 1px #ddd; }
+
+#faq {
+  background: #f5f5f5;
+  border-top: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+  padding: 50px;
+  margin-top: 50px; }
+
+#footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background: #333;
+  margin-top: 50px;
+  padding-top: 50px;
+  color: #fff; }
+  #footer a {
+    color: #fff; }
+    #footer a:hover {
+      color: #e11c1b; }
+
+#steemit-widgets-ticker {
+  background: #fff;
+  border-radius: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px; }
 
 @media (max-width: 991px) {
   #nav .navbar-nav {
     margin-top: 25px; }
     #nav .navbar-nav .nav-item .nav-link {
       text-align: center; }
+
+  #header {
+    padding: 60px 25px; }
 
   .lead {
     font-size: 1rem; } }
