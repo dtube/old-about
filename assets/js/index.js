@@ -34,4 +34,17 @@ let app = new Vue({
 
 $(function () {
     $(window).scroll();
+
+    $("#nav").find("ul li a[href^='#']").on('click', function(e) {
+        e.preventDefault();
+
+        // store hash
+        let hash = this.hash;
+
+        // animate
+        $('html, body').animate({
+            scrollTop: Math.max($(hash).offset().top - 100, 0)
+        }, 300);
+
+    });
 });
