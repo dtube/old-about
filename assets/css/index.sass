@@ -63,11 +63,29 @@ a
   border-bottom: solid 1px #ddd
 
 #faq
-  background: #f5f5f5
-  border-top: solid 1px #ddd
-  border-bottom: solid 1px #ddd
   padding: 50px 0
+  border-top: solid 1px #ccc
+  border-bottom: solid 1px #ccc
   margin-top: 50px
+  .faq-header
+    background: #ff1c1b
+    border-bottom: solid 1px #fff
+    transition: background .3s ease
+    &:hover
+      background: #e11c1b
+    a
+      color: #fff
+      padding: 10px
+      display: block
+  .faq-body
+    background: #fff
+    *:last-child
+      margin-bottom: 0
+    img
+      max-width: 100%
+      margin: 10px 0
+    h1, h2, h3
+      text-align: center
 
 #footer
   border-top: 1px solid rgba(0, 0, 0, .1)
