@@ -72,13 +72,13 @@
             <h1 class="text-center mb-5">FAQ</h1>
             <div v-cloak>
                 <div v-for="(question, key) in faq">
-                    <div :id="'heading' + key" class="faq-header">
-                        <a data-toggle="collapse" :href="'#collapse' + key">
+                    <div :id="'faq' + (key + 1)" class="faq-header">
+                        <a data-toggle="collapse" :href="'#faqCollapse' + (key + 1)">
                             {{ key + 1 }}. {{ question.question }}
                         </a>
                     </div>
 
-                    <div :id="'collapse' + key" class="collapse faq-body" data-parent="#accordion">
+                    <div :id="'faqCollapse' + (key + 1)" class="collapse faq-body" data-parent="#accordion">
                         <div v-html="renderAnswer(question.answer)" class="py-4"></div>
                     </div>
                 </div>

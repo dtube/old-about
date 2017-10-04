@@ -111,4 +111,17 @@ $(function () {
         }, 300);
 
     });
+
+    if ($(window.location.hash).length) {
+        // animate
+        $('html, body').animate({
+            scrollTop: Math.max($(window.location.hash).offset().top - 100, 0)
+        }, 300);
+
+        let reg = /^#faq[1-9]+$/;
+        if (reg.test(window.location.hash)) {
+            let index = parseInt(window.location.hash.replace('#faq', ''));
+            $('#faqCollapse' + index).collapse('show');
+        }
+    }
 });
