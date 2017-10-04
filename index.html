@@ -30,6 +30,9 @@
                     <a class="nav-link" href="#faq">FAQ</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#blog">Blog</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#contributing">Contributing</a>
                 </li>
                 <li class="nav-item">
@@ -73,6 +76,17 @@
                         <div v-html="renderAnswer(question.answer)" class="py-4"></div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div id="blog">
+        <div class="container">
+            <h1 class="text-center mb-5">DTube Blog</h1>
+            <div id="steemit-widgets-blog">
+                <div class="text-center"><i class="fa fa-spin fa-spinner"></i></div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="https://steemit.com/@dtube" class="btn btn-sm btn-danger rounded-0" target="_blank">more on steemit.com</a>
             </div>
         </div>
     </div>
@@ -121,6 +135,15 @@
     </div>
 </div>
 
+<template id="steemit-widgets-blog-template">
+    <div class="blog-post">
+        <a href="${URL}" target="_blank">
+            ${TITLE} ${RESTEEMED}
+        </a>
+        <span>${DATE}, by <a href="https://steemit.com/@${AUTHOR}" target="_blank">${AUTHOR}</a></span>
+    </div>
+</template>
+
 <template id="steemit-widgets-ticker-template">
     <div style="border: 0 solid rgb(0, 168, 230); border-radius: 0; font-family: Arial, Helvetica, sans-serif;">
         <div style="color: #666;">
@@ -148,11 +171,24 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.4.4/dist/vue.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script src="assets/js/index.js"></script>
 
 <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
 <script src="https://mktcode.github.io/steemit-widgets/assets/js/steemit-widgets.min.js"></script>
 <script>
+    steemitWidgets.blog({
+        user: 'dtube',
+        element: 'steemit-widgets-blog',
+        template: 'steemit-widgets-blog-template',
+        updateInterval: 0,
+        limit: 5,
+        resteemedIndicator: '<i class="fa fa-refresh"></i>',
+        dateCallback: function (date) {
+            return moment.utc(date).from(moment.utc().format('YYYY-MM-DD HH:mm:ss'));
+        }
+    });
+
     steemitWidgets.ticker({
         element: 'steemit-widgets-ticker',
         template: 'steemit-widgets-ticker-template',
@@ -161,6 +197,7 @@
         priceUSDPrecision: 2,
         updateInterval: 60
     });
+
 </script>
 </body>
 </html>

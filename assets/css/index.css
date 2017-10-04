@@ -14,6 +14,11 @@ a {
     text-decoration: none;
     color: #e11c1b; }
 
+.btn-danger {
+  background: #ff1c1b; }
+  .btn-danger:hover {
+    background: #e11c1b; }
+
 #nav {
   opacity: 0.5;
   transition: opacity 0.3s; }
@@ -79,6 +84,30 @@ a {
       margin: 10px 0; }
     #faq .faq-body h1, #faq .faq-body h2, #faq .faq-body h3 {
       text-align: center; }
+
+#blog {
+  padding: 50px 0;
+  border-bottom: solid 1px #ccc; }
+  #blog .blog-post {
+    color: #666;
+    padding: 10px;
+    transition: background 0.3s ease;
+    font-size: 12px; }
+    #blog .blog-post a {
+      font-size: 23px;
+      color: #333;
+      display: block;
+      line-height: 30px; }
+      #blog .blog-post a .fa-refresh {
+        color: #ddd;
+        font-size: 18px;
+        margin-left: 5px; }
+      #blog .blog-post a:hover {
+        text-decoration: underline; }
+    #blog .blog-post span a {
+      color: #ff1c1b;
+      display: inline;
+      font-size: 12px; }
 
 #footer {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
