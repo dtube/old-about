@@ -1,4 +1,4 @@
-# about.dtube.video
+# DTube About Page
 
 A landingpage presenting and explaining DTube
 
