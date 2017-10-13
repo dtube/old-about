@@ -58,8 +58,16 @@ a
 .contributing-github-logo
   color: #bbb
   font-size: 200%
-  margin-top: 25px
-  display: block
+
+.crowdin-logo
+  width: 250px
+  filter: gray
+  -webkit-filter: grayscale(1)
+  filter: grayscale(1)
+  transition: filter .3s ease
+  &:hover
+    -webkit-filter: grayscale(0)
+    filter: none
 
 #header
   padding: 120px 50px
