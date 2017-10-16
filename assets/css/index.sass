@@ -55,19 +55,39 @@ a
       margin-right: 15px
       transition: opacity .3s
 
-.contributing-github-logo
-  color: #bbb
-  font-size: 200%
+#contributing
+  padding-bottom: 50px
+  .contributing-github-logo
+    color: #bbb
+    font-size: 200%
+    &:hover
+      color: #333
 
-.crowdin-logo
-  width: 250px
-  filter: gray
-  -webkit-filter: grayscale(1)
-  filter: grayscale(1)
-  transition: filter .3s ease
-  &:hover
-    -webkit-filter: grayscale(0)
-    filter: none
+  .crowdin-logo
+    width: 250px
+    filter: gray
+    -webkit-filter: grayscale(1)
+    filter: grayscale(1)
+    transition: filter .3s ease
+    &:hover
+      -webkit-filter: grayscale(0)
+      filter: none
+
+#partners
+  background: #eee
+  padding-top: 50px
+  padding-bottom: 50px
+  a
+    img
+      max-width: 100%
+      width: 50px
+      filter: gray
+      -webkit-filter: grayscale(1)
+      filter: grayscale(1)
+      transition: filter .3s ease
+      &:hover
+        -webkit-filter: grayscale(0)
+        filter: none
 
 #header
   padding: 120px 50px
@@ -128,7 +148,6 @@ a
 #footer
   border-top: 1px solid rgba(0, 0, 0, .1)
   background: #333
-  margin-top: 50px
   padding-top: 50px
   color: #fff
   a
