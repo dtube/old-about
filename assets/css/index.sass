@@ -55,6 +55,10 @@ a
       margin-right: 15px
       transition: opacity .3s
 
+#what-is-dtube
+  padding-top: 50px
+  padding-bottom: 50px
+
 #contributing
   padding-bottom: 50px
   .contributing-github-logo
@@ -74,20 +78,17 @@ a
       filter: none
 
 #partners
-  background: #eee
-  padding-top: 50px
-  padding-bottom: 50px
-  a
-    img
-      max-width: 100%
-      width: 75px
-      filter: gray
-      -webkit-filter: grayscale(1)
-      filter: grayscale(1)
-      transition: filter .3s ease
-      &:hover
-        -webkit-filter: grayscale(0)
-        filter: none
+  #partners-container
+    background: #f8f8f8
+    padding-top: 50px
+    padding-bottom: 50px
+    a
+      img
+        max-width: 100%
+        width: 90px
+        transition: transform .3s ease
+        &:hover
+          transform: scale(1.25)
 
 #header
   padding: 120px 50px
@@ -97,9 +98,7 @@ a
 
 #faq
   padding: 50px 0
-  border-top: solid 1px #ccc
   border-bottom: solid 1px #ccc
-  margin-top: 50px
   .faq-header
     background: #ff1c1b
     border-bottom: solid 1px #fff
