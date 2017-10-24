@@ -2,7 +2,7 @@
 
 A landingpage presenting and explaining DTube
 
-# https://dtube.github.io/about/
+# https://about.d.tube/
 
 **(This is not the DTube repository! The main DTube repository will be public soon. Stay tuned!)**
 
